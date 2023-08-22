@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+  <style>
+    body{background-color: #101010;}
+    .x{color: white;}
+  </style>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -9,10 +12,15 @@
 </head>
 
 <body>
+  <div class="x">Ad Blocker</div>
+  <br>
+  <textarea>
+    javascript:/* Adblock Simple */(function(){const exceptOrigins = [  'https://disqus.com',  document.origin];function remIF(e){  try{    var orgn = new URL(e.src || 'http://unknown-src').origin;    if( ! exceptOrigins.includes(orgn)){      e.parentElement.removeChild(e);      console.log('REMOVE IFRAME',orgn);    }  } catch(err) {    console.log('REMOVE ERROR',err);  }}function remIFs(){  for(var e of document.getElementsByTagName('iframe')){    remIF(e);  }}/* Must repeat to catch recurring frames. */window.setInterval(remIFs,500);})();
+  </textarea>
   <script src="script.js"></script>
   <iframe src="https://deepai.org/chat" 
-    width="1920" 
-    height="1080" 
+    width="1440" 
+    height="900" 
     style="border:none; overflow:hidden;">
   </iframe>
 </body>
